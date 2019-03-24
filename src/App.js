@@ -23,14 +23,12 @@ class App extends Component {
   min = 0
   max = 100
   hueMax = 300
-  alphaMax = 1
 
   randomColor = () => {
     this.setState({
       hue: Math.round(this.min + Math.random() * (this.hueMax - this.min)),
       saturation: Math.round(this.min + Math.random() * (this.max - this.min)),
-      light: Math.round(this.min + Math.random() * (this.max - this.min)),
-      alpha: (this.min + Math.random() * (this.alphaMax - this.min)).toFixed(2)
+      light: Math.round(this.min + Math.random() * (this.max - this.min))
     })
   }
 

@@ -5,10 +5,10 @@ class Colorblock extends Component {
     return (
       <div className="color-picker">
         <h1>Color Picker</h1>
-        <div className="color-block" />
+
         <h2>
-          hsla({this.props.hue}, {this.props.saturation}%, {this.props.light}%,{' '}
-          {this.props.alpha})
+          hsla({this.props.hue},{this.props.saturation}%,{this.props.light}
+          %,{this.props.alpha})
         </h2>
       </div>
     )

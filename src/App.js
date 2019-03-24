@@ -15,7 +15,8 @@ class App extends Component {
       hue: 130,
       saturation: 100,
       light: 55,
-      alpha: 1
+      alpha: 1,
+      hsla: ''
     }
   }
 
@@ -39,14 +40,28 @@ class App extends Component {
     console.log('Alpha:' + event.target.value)
   }
 
+  getHsla = () => {
+    return `hsla(${this.state.hue}, ${this.state.sat}%, ${this.state.light}%, ${
+      this.state.alpha
+    })`
+  }
+
   render() {
     return (
-      <div className="App">
+      <div
+        className="App"
+        style={{
+          backgroundColor: `hsla(${this.state.hue}, ${
+            this.state.saturation
+          }%, ${this.state.light}%, ${this.state.alpha})`
+        }}
+      >
         <Colorblock
           hue={this.state.hue}
           saturation={this.state.saturation}
           light={this.state.light}
           alpha={this.state.alpha}
+          getHsla={this.getHsla}
         />
         <Saturation
           saturation={this.state.saturation}

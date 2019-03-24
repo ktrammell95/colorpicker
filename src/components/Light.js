@@ -4,6 +4,7 @@ class Light extends Component {
   render() {
     return (
       <div className="light">
+        <h3>Light</h3>
         <input
           id="light"
           type="range"

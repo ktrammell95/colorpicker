@@ -4,6 +4,7 @@ class Hue extends Component {
   render() {
     return (
       <div className="hue">
+        <h3>Hue</h3>
         <input
           id="hue"
           type="range"

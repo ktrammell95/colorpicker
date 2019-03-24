@@ -4,6 +4,7 @@ class Saturation extends Component {
   render() {
     return (
       <div className="saturation">
+        <h3>Saturation</h3>
         <input
           id="saturation"
           type="range"

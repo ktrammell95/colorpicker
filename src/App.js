@@ -4,6 +4,7 @@ import Saturation from './components/Saturation'
 import Hue from './components/Hue'
 import Light from './components/Light'
 import Alpha from './components/Alpha'
+import Button from './components/Button'
 
 import './App.css'
 import './styles/colorpicker.css'
@@ -19,25 +20,46 @@ class App extends Component {
       hsla: ''
     }
   }
+  min = 0
+  max = 100
+  hueMax = 300
+  alphaMax = 1
+
+  randomColor = () => {
+    this.setState({
+      hue: Math.round(this.min + Math.random() * (this.hueMax - this.min)),
+      saturation: Math.round(this.min + Math.random() * (this.max - this.min)),
+      light: Math.round(this.min + Math.random() * (this.max - this.min)),
+      alpha: (this.min + Math.random() * (this.alphaMax - this.min)).toFixed(2)
+    })
+  }
+
+  componentDidMount() {
+    this.randomColor()
+  }
+
+  randomize = () => {
+    this.randomColor()
+  }
 
   updateSaturation = event => {
     this.setState({ saturation: event.target.value })
-    console.log('Saturation:' + event.target.value)
+    // console.log('Saturation:' + event.target.value)
   }
 
   updateHue = event => {
     this.setState({ hue: event.target.value })
-    console.log('Hue:' + event.target.value)
+    // console.log('Hue:' + event.target.value)
   }
 
   updateLight = event => {
     this.setState({ light: event.target.value })
-    console.log('Light:' + event.target.value)
+    // console.log('Light:' + event.target.value)
   }
 
   updateAlpha = event => {
     this.setState({ alpha: event.target.value })
-    console.log('Alpha:' + event.target.value)
+    // console.log('Alpha:' + event.target.value)
   }
 
   getHsla = () => {
@@ -48,14 +70,7 @@ class App extends Component {
 
   render() {
     return (
-      <div
-        className="App"
-        style={{
-          backgroundColor: `hsla(${this.state.hue}, ${
-            this.state.saturation
-          }%, ${this.state.light}%, ${this.state.alpha})`
-        }}
-      >
+      <div className="App">
         <Colorblock
           hue={this.state.hue}
           saturation={this.state.saturation}
@@ -63,13 +78,14 @@ class App extends Component {
           alpha={this.state.alpha}
           getHsla={this.getHsla}
         />
+        <Hue hue={this.state.hue} updateHue={this.updateHue} />
         <Saturation
           saturation={this.state.saturation}
           updateSaturation={this.updateSaturation}
         />
-        <Hue hue={this.state.hue} updateHue={this.updateHue} />
         <Light light={this.state.light} updateLight={this.updateLight} />
         <Alpha alpha={this.state.alpha} updateAlpha={this.updateAlpha} />
+        <Button randomize={this.randomize} />
       </div>
     )
   }

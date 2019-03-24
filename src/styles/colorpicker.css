@@ -3,3 +3,45 @@
   background: lightgray;
   height: 100vh;
 }
+
+input {
+  width: 300px;
+  height: 50px;
+}
+
+span {
+  width: 60px;
+  text-align: center;
+  display: inline-block;
+}
+
+.alpha,
+.hue,
+.saturation,
+.light {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+h3 {
+  padding: 0 10px;
+}
+
+h2 span {
+  margin-right: 5px;
+  display: inline;
+}
+
+.color-block {
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border: 1px solid gray;
+  border-radius: 3%;
+}
+
+.color-picker {
+  padding-top: 40px;
+}

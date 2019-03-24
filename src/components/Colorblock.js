@@ -5,14 +5,16 @@ class Colorblock extends Component {
     return (
       <div className="color-picker">
         <h1>Color Picker</h1>
-        <div
-          className="color-block"
-          style={{
-            backgroundColor: `hsla(${this.props.hue}, ${
-              this.props.saturation
-            }%, ${this.props.light}%, ${this.props.alpha})`
-          }}
-        />
+        <div className="img-block">
+          <div
+            className="color-block"
+            style={{
+              backgroundColor: `hsla(${this.props.hue}, ${
+                this.props.saturation
+              }%, ${this.props.light}%, ${this.props.alpha})`
+            }}
+          />
+        </div>
         <h2>
           <span>hsla</span>
           <span>({this.props.hue},</span>

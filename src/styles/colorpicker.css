@@ -34,14 +34,22 @@ h2 span {
   display: inline;
 }
 
+.img-block {
+  background-image: url('../giz.png');
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border: 1px solid gray;
+  border-radius: 3%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .color-block {
   width: 150px;
   height: 150px;
   margin: auto;
   border: 1px solid gray;
   border-radius: 3%;
-}
-
-.color-picker {
-  padding-top: 40px;
 }
